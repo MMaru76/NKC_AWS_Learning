@@ -36,8 +36,8 @@
 
 ---
 
-【バケット名】 は､ ==一意== な値を入力
-【リージョン】 は､ ==｢米国東部(バージニア北部)｣== を選択
+【バケット名】 は､ 一意 な値を入力
+【リージョン】 は､ ｢米国東部(バージニア北部)｣ を選択
 
 [![Image from Gyazo](https://i.gyazo.com/fc3adc9b726d0bb8e47f0cf7ecbb6e5c.png)](https://gyazo.com/fc3adc9b726d0bb8e47f0cf7ecbb6e5c)
 
