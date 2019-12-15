@@ -1,6 +1,5 @@
 各種 ツール 配布場所
 学校からSSHする為に使うファイル
-https://drive.google.com/open?id=1pBRSbcdzc8BmIXw4oWWj08B2Y-zUy0lO
 
 
 
