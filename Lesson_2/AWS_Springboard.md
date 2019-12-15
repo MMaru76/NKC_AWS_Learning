@@ -1,5 +1,3 @@
-###### tags: AWS, NKC
-
 # 追加課題 踏み台 20191203
 
 ## 条件
@@ -12,4 +10,4 @@
 
 ## 解答
 
-https://hackmd.io/@JWGkc17TT-Cdw7vZF9raow/SkYmC6maS
+[追加課題の解答 踏み台 20191203](./AWS_SpringboardAnswer.md)

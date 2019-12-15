@@ -1,41 +1,30 @@
-###### tags: AWS, NKC
-
 # AWS RDS を立ち上げて EC2 に繋げてみよう
 
-:::danger
-**今回の章が終わったら､必ずRDSサーバーを確実に消しましょう｡
+>**今回の章が終わったら､必ずRDSサーバーを確実に消しましょう｡<br>
 RDSは停止していても料金がかかる模様｡**
-:::
 
-最初に AWS RDSを作成して実際に接続しますが､クレジット消費が激しいので､なるべく早めに消しましょう｡
+最初に AWS RDSを作成して実際に接続しますが､クレジット消費が激しいので､なるべく早めに消しましょう｡<br>
 以後は､PublicInstanceにインストールをするか､PrivateInstanceを作成してインストールかしてください｡
 
 PrivateInstanceにMysqlサーバーをインストールする際は､踏み台からアクセスするようしましょう｡
 
 ## 余談
 
-:question: また､これどういう意味なのかな?と疑問に思ったら､随時ググってみたり隣の人と相談してみましょう｡
+また､これどういう意味なのかな?と疑問に思ったら､随時ググってみたり隣の人と相談してみましょう｡
 
 [![Image from Gyazo](https://i.gyazo.com/87f635af9080efe76a002331fafd1907.png)](https://speakerdeck.com/takashi_toyosaki/awsnichao-xiang-siienziniaga-yu-tuhuan-jing-wotukurufang-fa?slide=53)
 
 > 引用元: [AWSに超詳しいエンジニアが育つ環境をつくる方法](https://speakerdeck.com/takashi_toyosaki/awsnichao-xiang-siienziniaga-yu-tuhuan-jing-wotukurufang-fa?slide=53)
 > [オススメ記事](https://dev.classmethod.jp/cloud/aws/moko-aws-6kan/) ←是非オススメ!何がオススメなの?見てみよう｡
 
-:::warning
 抜けてる部分や足りない部分があるかもしれません｡その時は調べてみよう｡
-:::
 
 ## 1. 【RDS】 とは?
 
-:::info
+>Amazon RDSとは、米国Amazon.comが発表した、クラウドコンピューティング環境でリレーショナルデータベースを構築・運用できるサービスである。<br>
+Amazon RDSはMySQL（MySQL 5.1）をベースとしたリレーショナルデータベースであり、クラウドサービス「Amazon Web Services」においてオプションとして利用できる。MySQLの全機能がAmazon RDSでも利用可能となっており、既存のMySQL向けのツールやアプリケーションが容易にAmazon RDSへ適用できるというメリットがある。また、データベース本体のアップデートやデータのバックアップ管理などはAmazon RDS側で管理されるため、メンテナンスのコストも軽減される。<br>
+Amazon Web Servicesでは、既に「Amazon SimpleDB」と呼ばれるデータベースを提供している。両者の違いとしては、Amazon SimpleDBが比較的簡易なデータベースを提供するのに対して、Amazon RDSはより高度で複雑なリレーショナルデータベースを提供するものである。<br>
 
->Amazon RDSとは、米国Amazon.comが発表した、クラウドコンピューティング環境でリレーショナルデータベースを構築・運用できるサービスである。
-
->Amazon RDSはMySQL（MySQL 5.1）をベースとしたリレーショナルデータベースであり、クラウドサービス「Amazon Web Services」においてオプションとして利用できる。MySQLの全機能がAmazon RDSでも利用可能となっており、既存のMySQL向けのツールやアプリケーションが容易にAmazon RDSへ適用できるというメリットがある。また、データベース本体のアップデートやデータのバックアップ管理などはAmazon RDS側で管理されるため、メンテナンスのコストも軽減される。
-
->Amazon Web Servicesでは、既に「Amazon SimpleDB」と呼ばれるデータベースを提供している。両者の違いとしては、Amazon SimpleDBが比較的簡易なデータベースを提供するのに対して、Amazon RDSはより高度で複雑なリレーショナルデータベースを提供するものである。
-
-:::
 
 引用元 : [Amazon RDSとは何？ Weblio辞書](https://www.weblio.jp/content/Amazon+RDS)
 
@@ -47,9 +36,7 @@ PrivateInstanceにMysqlサーバーをインストールする際は､踏み台
 
 ---
 
-:::success
-Hello 『Amazon Relational Database Service(Amazon RDS)』 World Dashboard :tada:
-:::
+Hello 『Amazon Relational Database Service(Amazon RDS)』 World Dashboard
 
 [![Image from Gyazo](https://i.gyazo.com/eab70afadb42f5b8bdc2f3328fb3a5d8.png)](https://gyazo.com/eab70afadb42f5b8bdc2f3328fb3a5d8)
 
@@ -71,7 +58,7 @@ Hello 『Amazon Relational Database Service(Amazon RDS)』 World Dashboard :tada
 | :--: | :--: | :--: |
 | 名前 | 任意 | ローマ字 |
 | 説明 | 任意 | ローマ字 |
-| VPC | [個人で作成したVPC](https://hackmd.io/@JWGkc17TT-Cdw7vZF9raow/By6frCSwH) |  |
+| VPC | [個人で作成したVPC](https://hackmd.io/@JWGkc17TT-Cdw7vZF9raow/By6frCSwH) | 選択 |
 
 [![Image from Gyazo](https://i.gyazo.com/edb08e571ebc0eb76941fbe32ce143ce.png)](https://gyazo.com/edb08e571ebc0eb76941fbe32ce143ce)
 
@@ -91,13 +78,9 @@ Hello 『Amazon Relational Database Service(Amazon RDS)』 World Dashboard :tada
 
 思ってる疑問は↓の詳細に載ってるかも?
 
-:::spoiler
-
 本当に自分が作成したVPC内のサブネットを使用してるの?って思う人は､【VPC】から【サブネット】を選択して目grepしてみよう!
 
 [![Image from Gyazo](https://i.gyazo.com/fc819cd0a760a9f74c21f6092c33aa3a.png)](https://gyazo.com/fc819cd0a760a9f74c21f6092c33aa3a)
-
-:::
 
 ---
 
@@ -165,7 +148,7 @@ Hello 『Amazon Relational Database Service(Amazon RDS)』 World Dashboard :tada
 
 ### 5-3) 【テンプレート】
 
-(学生版の画面がどの様になっているか確認出来ない為､本番環境以外を選択)
+(学生版の画面がどの様になっているか確認出来ない為､本番環境以外を選択)<br>
 テストで起動してみたい方や､無料枠を利用している方などは､【無料利用枠】 を選択
 
 [![Image from Gyazo](https://i.gyazo.com/15ba75a8544f26954dc5da3648fe5741.png)](https://gyazo.com/15ba75a8544f26954dc5da3648fe5741)
@@ -230,17 +213,13 @@ Hello 『Amazon Relational Database Service(Amazon RDS)』 World Dashboard :tada
 
 『[AWS ネットワーク環境の構築手順](https://hackmd.io/@JWGkc17TT-Cdw7vZF9raow/By6frCSwH)』 や 『[追加課題の解答 踏み台 20191203](https://hackmd.io/Pgk7EfGbS5KzNOWtUlN0Gg)』 を参考に､パブリックサブネットにインスタンスを作成しましょう｡
 
-また､作成したインスタンスへの接続方法は自由です｡
-==(接続方法がワカランという方はGoogleドキュメントを見て)==
+また､作成したインスタンスへの接続方法は自由です｡<br>
+(接続方法がワカランという方はGoogleドキュメントを見て)
 
-:::info
 下記の ｢=>｣ 以降については､出力結果です｡
 ```
 => TEST ←については､出力結果です｡
 ```
-
-:::
-
 
 >インスタンスに接続すると下記のように表示されるはず｡
 [![Image from Gyazo](https://i.gyazo.com/75dbce77081d35f8e10f2ca31f09f80c.png)](https://gyazo.com/75dbce77081d35f8e10f2ca31f09f80c)
@@ -258,20 +237,14 @@ Hello 『Amazon Relational Database Service(Amazon RDS)』 World Dashboard :tada
 
 おそらく､ソースに部分に書かれてるIPは学校のグローバルIPなはず､[グローバルIPの確認方法](https://www.cman.jp/network/support/go_access.cgi)｡
 
-:::info
 なんで､SGのソース部分を変更までして面倒くさい事をするのか疑問な人は､ソース部分を一旦学校のグローバルIPのままにしたり､適当にプライベートサブネットのCIDRブロックを指定したりして試して楽しんでみてください｡
-:::
 
 [![Image from Gyazo](https://i.gyazo.com/66f410cf0665ab3cbf6cd1e6b921e685.gif)](https://gyazo.com/66f410cf0665ab3cbf6cd1e6b921e685)
 
-:::spoiler
-
-疑問に思うことはとても大事です｡
-ただ本番環境などでは､疑問に思うことは時間の無駄です｡
-先に自分で色々な失敗をしましょう｡
+疑問に思うことはとても大事です｡<br>
+ただ本番環境などでは､疑問に思うことは時間の無駄です｡<br>
+先に自分で色々な失敗をしましょう｡<br>
 せっかくAWSを無料で使えるので使い倒しましょう｡
-
-:::
 
 ### 6-2) 【必要なパッケージのインストール】
 
@@ -339,12 +312,7 @@ Hello 『Amazon Relational Database Service(Amazon RDS)』 World Dashboard :tada
 
 ## 8. 【EC2】 MySQL サーバー 構築&接続
 
-:::warning
-
-こちらの章は自由です｡
-AWSとは全く関係無いです｡
-
-:::
+>こちらの章は自由です｡AWSとは全く関係無いです｡
 
 同じインスタンスに対してMySQLサーバーを構築する方法
 
@@ -375,7 +343,7 @@ Starting mysqld:                                           [  OK  ]
 
 #### 8-4) 初期設定方法
 
-==パスワードの部分以外は､エンターキーを押してスキップ==
+パスワードの部分以外は､エンターキーを押してスキップ
 
 ```bash
 [ec2-user@パブリックIP ~]$ $ mysql_secure_installation
@@ -401,13 +369,11 @@ will take effect immediately.
 
 Reload privilege tables now? [Y/n]
 
-
 # 終わり
 All done!  If you've completed all of the above steps, your MySQL
 installation should now be secure.
 
 Thanks for using MySQL!
-
 
 Cleaning up...
 ```
@@ -424,21 +390,14 @@ Cleaning up...
 
 # アンケート
 
-:::info
 アンケートの回答自体は任意です｡
 また名前の記載は任意です｡
-:::
 
 改善点や要望そして､相談などがあれば気軽にフォームに送って頂いて構いません｡
 
 [回答フォーム](https://forms.gle/arfE9ndzwc86YYVp8)
 
-こちらの章について､追加課題はありませんが､これでMySQLサーバーの構築が出来たかと思います｡
+こちらの章について､追加課題はありませんが､これでMySQLサーバーの構築が出来たかと思います｡<br>
 あとは､個人で各種データベース作ってテーブル項目を考えてデータを突っ込んでみてもも楽しいかもしれません｡
 
->:+1: 例えば､データーベース授業で使っているデータを実際に流し込んでみて､それをWebサイトで取得出来るようにするなど｡
-
----
-
-次回は､Amazon CloudFront(CDN)やS3とかを紹介する予定です｡(変わるかもしれないです｡)
-Route53当たりとかも紹介出来たら!と思っています｡(こちらは僕のドメインを使うかもしれない｡)
+> 例えば､データーベース授業で使っているデータを実際に流し込んでみて､それをWebサイトで取得出来るようにするなど｡

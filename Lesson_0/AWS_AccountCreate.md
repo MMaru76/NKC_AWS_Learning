@@ -1,5 +1,3 @@
-###### tags: AWS, NKC
-
 # AWS アカウントの簡単な新規作成方法
 
 AWS のアカウントを作るにあたって最低限必要な物や作成手順について書いています｡
@@ -11,39 +9,24 @@ AWS のアカウントを作るにあたって最低限必要な物や作成手�
 - 電話番号 : 1個
 	- 070から始まるのは微妙
 - メールアドレス : 1個
-	- キャリア/学校のメールアドレスはダメ｡(将来の事を考えよう)
-	- Google メールアドレスOK｡
+	- キャリア/学校のメールアドレスは絶対にダメ｡(将来の事を考えよう)
+	- GoogleとかのメールアドレスはOK｡
 
-:::warning
 クレジットカードを所持してない人は下記の URL を見て､各自で 【Vプリカ】 などを購入して
 
 【[「Vプリカ」はクレカを持てない人に、すぐに使えてセキュリティも安心　特徴や注意点をくわしく解説](https://manetatsu.com/2019/09/205652/) 】
 
-:::
-
 - Webサイトで購入する際は､下記の様に表示される｡
-
-:::spoiler
 
 [![Image from Gyazo](https://i.gyazo.com/bd319e37ee32a548ddf12ff6b69941ea.png)](https://gyazo.com/bd319e37ee32a548ddf12ff6b69941ea)
 
-:::
-
 - コンビニで購入する際は､下記の様に表示される｡
-
-:::spoiler
 
 [![Image from Gyazo](https://i.gyazo.com/de79df5fe7dc5782eb47af0d06623a57.jpg)](https://gyazo.com/de79df5fe7dc5782eb47af0d06623a57)
 
-:::
-
 ## アカウント作成手順
 
-:::danger
-
 クレジットカードの入力時の画像を撮るのを忘れてしまったが､ただ入力するだけ｡
-
-:::
 
 https://aws.amazon.com/jp/
 
@@ -65,12 +48,8 @@ https://aws.amazon.com/jp/
 
 個人情報を入力をする際は､ローマ字での入力必須
 
-:::danger
-
 平仮名や漢字が入っていた場合↓
 [![Image from Gyazo](https://i.gyazo.com/6efc40d6b4b0bc627bfc4cc0602fdd1f.png)](https://gyazo.com/6efc40d6b4b0bc627bfc4cc0602fdd1f)
-
-:::
 
 - アカウントの種類
 	- 【パーソナル】 を選択
@@ -97,7 +76,7 @@ https://aws.amazon.com/jp/
 
 [![Image from Gyazo](https://i.gyazo.com/c5c3273139a5708598ae40fb2fbe6502.png)](https://gyazo.com/c5c3273139a5708598ae40fb2fbe6502)
 
---- 
+---
 
 - スマホで 【メッセージ(SMS)】 を起動
 - 届いたメッセージの数字を覚える

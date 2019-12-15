@@ -1,14 +1,8 @@
-###### tags: AWS, NKC
-
 # AWS ネットワーク環境の構築手順
 
 今回の目標は､左の空っぽ状態から右のような VPC 環境を作ります｡
 
-:::warning
-
 [![Image from Gyazo](https://i.gyazo.com/ef3d465395aba6f2ee1abd3e867b4e08.png)](https://gyazo.com/ef3d465395aba6f2ee1abd3e867b4e08)
-
-:::
 
 ## 各配色について
 
@@ -20,15 +14,13 @@
 
 ## 1. Virtual Private Cloud の作成手順
 
-:::info
 Virtual Private Cloud(以降､VPC)
-:::
 
 -  イメージ完成図
 
 [![Image from Gyazo](https://i.gyazo.com/47fbfdc6197241776ef2f31ff96f6e9d.png)](https://gyazo.com/47fbfdc6197241776ef2f31ff96f6e9d)
 
---- 
+---
 
 - VPC ダッシュボードから 【VPC】 を選択
 - 【VPCの作成】 を選択
@@ -49,7 +41,7 @@ Virtual Private Cloud(以降､VPC)
 
 ---
 
-- ==確認項目== 対象の VPC の 【説明】 で下記項目を確認
+- 確認項目 対象の VPC の 【説明】 で下記項目を確認
 	- [ ] 状態 : available
 	- [ ] IPv4 CIDR : 10.0.0.0/16
 
@@ -87,7 +79,7 @@ Virtual Private Cloud(以降､VPC)
 
 ---
 
-- ==確認項目== 対象のサブネットの 【説明】 で下記項目を確認
+- 確認項目 対象のサブネットの 【説明】 で下記項目を確認
 	- [ ] VPC : 『1. VPCの作成手順』 の名前
 	- [ ] アベイラビリティゾーン : us-east-1a(use1-az4)
 	- [ ] 状態 : available
@@ -99,9 +91,8 @@ Virtual Private Cloud(以降､VPC)
 
 ### 問題
 
-:::info
 【1.VPCの作成手順】 で作成したVPCを使用し､下記の条件を満たすサブネットを作成せよ｡
-- ==条件==
+- 条件
 	- [ ] プライベート環境用のサブネット
 	- [ ] アベイラビリティゾーン : us-east-1b(use1-az6)
 	- [ ] 状態 : available
@@ -110,15 +101,12 @@ Virtual Private Cloud(以降､VPC)
 - 完成条件
 
 	[![Image from Gyazo](https://i.gyazo.com/3beaa1eb1c0ac559cd38837325d1b419.png)](https://gyazo.com/3beaa1eb1c0ac559cd38837325d1b419)
-:::
 
 ---
 
 ## 3. インターネットゲートウェイ の作成手順
 
-:::info
 インターネットゲートウェイ(以降､IGW)
-:::
 
 -  イメージ完成図
 
@@ -146,9 +134,9 @@ Virtual Private Cloud(以降､VPC)
 
 ---
 
-- ==確認項目== 対象の IGW の 【説明】 で下記項目を確認
+- 確認項目 対象の IGW の 【説明】 で下記項目を確認
 	- [ ] 状態 : detached
-	- [ ] アタッチ済み VPC ID : - 
+	- [ ] アタッチ済み VPC ID : -
 
 [![Image from Gyazo](https://i.gyazo.com/e6cf811e9e0abbd155f1bd2c928d2fb8.png)](https://gyazo.com/e6cf811e9e0abbd155f1bd2c928d2fb8)
 
@@ -167,7 +155,7 @@ Virtual Private Cloud(以降､VPC)
 
 ---
 
-- ==確認項目== 対象の IGW の 【説明】 で下記項目を確認
+- 確認項目 対象の IGW の 【説明】 で下記項目を確認
 	- [ ] 状態 : attached
 	- [ ] アタッチ済み VPC ID : 『1.VPCの作成手順』
 
@@ -198,7 +186,7 @@ Virtual Private Cloud(以降､VPC)
 
 ---
 
-- ==確認項目== 対象の ルートテーブル の 【ルート】 で下記項目を確認
+- 確認項目 対象の ルートテーブル の 【ルート】 で下記項目を確認
 	- [ ] 送信先 : 0.0.0.0/0
 	- [ ] ターゲット : 『3. IGWの作成手順』
 
@@ -227,10 +215,8 @@ Virtual Private Cloud(以降､VPC)
 
 ## 5. セキュリティグループ の作成手順
 
-:::info
 セキュリティグループ(以降､SG)
 こちらの作業はEC2や各種サービスでインスタンスを作成する際に､作業を行う事もできる｡
-:::
 
 -  イメージ完成図
 
@@ -249,9 +235,7 @@ Virtual Private Cloud(以降､VPC)
 	- 用途に合った最適な名前を命名
 - 【説明】 に用途などを記述
 	- 日本語は受け付けない､英語のみ
-		:::spoiler
 		[![Image from Gyazo](https://i.gyazo.com/2cda8192847ac99e41ad20ee602877a6.png)](https://gyazo.com/2cda8192847ac99e41ad20ee602877a6)
-		:::
 - 【VPC】 に 『1. VPCの作成手順』 を選択
 
 [![Image from Gyazo](https://i.gyazo.com/d5fc723464635c496117aeda9c2b0fd8.png)](https://gyazo.com/d5fc723464635c496117aeda9c2b0fd8)
@@ -276,8 +260,8 @@ Virtual Private Cloud(以降､VPC)
 
 ---
 
-- ==確認項目== 対象の SG の 【インバウンドルール】 で下記項目を確認
-	
+- 確認項目 対象の SG の 【インバウンドルール】 で下記項目を確認
+
 	| タイプ | プロトコル | ポート開放 | ケース | 説明 |
 	|:--:|:--:|:--:|:--|:--:|
 	|HTTP|TCP|80|[カスタム] [0.0.0.0/0]||
@@ -302,10 +286,8 @@ Virtual Private Cloud(以降､VPC)
 
 # アンケート
 
-:::info
 アンケートの回答自体は任意です｡
 また名前の記載は任意です｡
-:::
 
 改善点や要望そして､相談などがあれば気軽にフォームに送って頂いて構いません｡
 
