@@ -4,8 +4,8 @@
 不明な単語が出たら随時､各自で調べてみましょう｡
 
 ｢さくらインターネット｣ の社長さんのBlogやTwitterを参考<br>
-[大災害時におけるアクセス負荷を軽減させるキャッシュサーバ提供について](https://tanaka.sakura.ad.jp/2011/03/cache-cdn-server.html)
-[Twitter](https://twitter.com/kunihirotanaka/status/1008496434562265088)
+- [大災害時におけるアクセス負荷を軽減させるキャッシュサーバ提供について](https://tanaka.sakura.ad.jp/2011/03/cache-cdn-server.html)
+- [Twitter](https://twitter.com/kunihirotanaka/status/1008496434562265088)
 
 # 事前準備編
 
