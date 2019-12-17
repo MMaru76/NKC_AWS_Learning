@@ -1,5 +1,7 @@
 # NKC_AWS_Learning
 
+[まるちゃんのTwitter](https://twitter.com/M_Maru76)
+
 ## Lesson_0
 
 > Lesson0では､基本的にAccount作成からRLoginの使い方やSSHポートの変更手順を紹介しています｡
