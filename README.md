@@ -31,7 +31,7 @@
 
 - [AWS CloudFront+S3 で静的サイトを配信](Lesson_4/AWS_CloudFront_S3_Delivery.md)
 
-## Lesson_4
+## Lesson_5
 
 - [AWS ロードバランサー 建て方](Lesson_5/AWS_LoadBalancer.md)
 
