@@ -31,6 +31,10 @@
 
 - [AWS CloudFront+S3 で静的サイトを配信](Lesson_4/AWS_CloudFront_S3_Delivery.md)
 
+## Lesson_4
+
+- [AWS ロードバランサー 建て方](Lesson_5/AWS_LoadBalancer.md)
+
 ## 余談
 Qiita Markdown 書き方 まとめ
 https://qiita.com/shizuma/items/8616bbe3ebe8ab0b6ca1
