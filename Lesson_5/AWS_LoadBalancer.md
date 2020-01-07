@@ -46,7 +46,6 @@ $ sudo su -
 => nginx をインストール
 # vim /usr/share/nginx/html/index.html
 => ドキュメントルートの index.html を自由に書き換える
-# systemctl start nginx
 # service nginx start
 => nginx 起動
 # chkconfig nginx on
