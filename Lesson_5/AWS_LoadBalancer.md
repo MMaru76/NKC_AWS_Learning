@@ -3,6 +3,7 @@
 参考サイト
 - [ロードバランサーを使った負荷分散環境を構築](https://aws.amazon.com/jp/getting-started/projects/scalable-wordpress-website/03/)
 - [Elastic Load Balancing（ロードバランサー）を作成](https://aws.amazon.com/jp/getting-started/projects/scalable-wordpress-website/03/03/)
+- [ロードバランサーのはじめから](https://www.infraexpert.com/study/study24.html)
 
 ###### ↑圧倒的に分かりやすい｡
 
