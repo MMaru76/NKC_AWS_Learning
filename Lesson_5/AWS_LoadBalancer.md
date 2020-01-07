@@ -16,6 +16,8 @@
 - いつも通りの感じで **PublicSubnet** にインスタンスを1台建てる｡
 - ログイン後に下記のコマンドを実行
 
+Amazon Linux 2
+
 ```shell
 $ sudo su -
 # yum -y update
@@ -31,6 +33,23 @@ $ sudo su -
 # systemctl start nginx
 => nginx 起動
 # systemctl enable nginx
+=> nginx 自動起動
+```
+
+Amazon Linux
+
+```shell
+$ sudo su -
+# yum -y update
+=> 更新
+# yum -y install nginx
+=> nginx をインストール
+# vim /usr/share/nginx/html/index.html
+=> ドキュメントルートの index.html を自由に書き換える
+# systemctl start nginx
+# service nginx start
+=> nginx 起動
+# chkconfig nginx on
 => nginx 自動起動
 ```
 
