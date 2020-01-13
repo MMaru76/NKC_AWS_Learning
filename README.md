@@ -35,6 +35,10 @@
 
 - [AWS ロードバランサー 建て方](Lesson_5/AWS_LoadBalancer.md)
 
+## Challenge_1
+
+- [WordPress ウェブサイトを作ってみよう](Challenge_1/WordPress.md)
+
 ## 余談
 Qiita Markdown 書き方 まとめ
 https://qiita.com/shizuma/items/8616bbe3ebe8ab0b6ca1
