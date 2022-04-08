@@ -1,6 +1,8 @@
 # NKC_AWS_Learning
 
-[まるちゃんのTwitter](https://twitter.com/M_Maru76)
+[丸屋 正志(Maruya Masashi)](https://twitter.com/M_Maru76)です｡
+- クラスメソッド株式会社のBlog : [DevelopersIO 丸屋 正志](https://dev.classmethod.jp/author/maruya-masashi/)
+- [Wantedly プロフィール](https://www.wantedly.com/id/MMaru76)
 
 ## Lesson_0
 
