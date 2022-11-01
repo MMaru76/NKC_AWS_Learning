@@ -29,13 +29,15 @@
 - PrivateSubnet に対してインスタンスを作成
 - 【自動割り当てパブリックIP】 の 【無効】 を選択
 
-[![Image from Gyazo](https://i.gyazo.com/1cfb7278105575ae783f86fe88a7f425.png)](https://gyazo.com/1cfb7278105575ae783f86fe88a7f425)
+![1cfb7278105575ae783f86fe88a7f425](https://user-images.githubusercontent.com/20497766/199162649-18007079-d73b-4347-9ebc-b16e5f318a9b.png)
+
 
 ---
 
 ### 完成図
 
-[![Image from Gyazo](https://i.gyazo.com/5367e88f31e229918c45e6876386f183.png)](https://gyazo.com/5367e88f31e229918c45e6876386f183)
+![5367e88f31e229918c45e6876386f183](https://user-images.githubusercontent.com/20497766/199162689-c8397907-df9e-4965-acaf-52e926905646.png)
+
 
 ## 2. 鍵の転送方法手順
 
@@ -56,7 +58,8 @@ $ vim ~/.ssh/SecretKey.pem
 $ chmod 400 ~/.ssh/SecretKey.pem
 ```
 > 鍵の転送の仕方のGIF
-![](https://i.imgur.com/k65Ufpg.gif)
+![68747470733a2f2f692e696d6775722e636f6d2f6b3635556670672e676966](https://user-images.githubusercontent.com/20497766/199162749-729f24de-62d4-4add-b5ed-639d6d71622d.gif)
+
 
 ---
 
