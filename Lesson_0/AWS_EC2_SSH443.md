@@ -16,7 +16,9 @@ echo "Port 443" >> /etc/ssh/sshd_config
 service sshd restart
 ```
 
-[![Image from Gyazo](https://i.gyazo.com/176ca7a02c578a28d8e7042f28883038.gif)](https://gyazo.com/176ca7a02c578a28d8e7042f28883038)
+
+https://user-images.githubusercontent.com/20497766/199161044-625813f2-3a30-4991-a0a8-d268b2c0f0a0.mp4
+
 
 ---
 
@@ -24,4 +26,7 @@ service sshd restart
 
 【ファイルとして】→ファイルを指定
 
-[![Image from Gyazo](https://i.gyazo.com/3d20818d3be4d9721af452447d4dea7c.gif)](https://gyazo.com/3d20818d3be4d9721af452447d4dea7c)
+
+
+https://user-images.githubusercontent.com/20497766/199161061-85542e70-0b19-401b-b69d-ad47f25f785e.mp4
+
